@@ -139,7 +139,5 @@ def main_one_agent(board, agent, agent_color):
     pygame.quit()
     
 board = chess.Board()
-engine = engine.Engine(chess.BLACK)
 
 main_one_agent(board, engine, chess.BLACK)
-# main(board)
