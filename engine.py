@@ -1,6 +1,6 @@
 import chess
 import chess.polyglot
-import random
+from random import choice as random_choice
 
 
 maxDepth = 5
@@ -84,7 +84,7 @@ def scoreSquare(board, square):
         return pieceValue
 
 def mateOpportunity(board):
-    if board.legal_moves.count() == 0:
+    if board.is_checkmate():
         return 99999
     else:
         return 0
@@ -94,6 +94,13 @@ def opening(board):
         return 1/30 * board.legal_moves.count()
     else:
         return 0
+    
+# def get_all_set_bits(bits):
+#     bits_index = []
+#     for i, c in enumerate(bin(bits)[:1:-1], 1):
+#         if c == '1':
+#             bits_index.append(i-1)
+#     return bits_index
 
 def evaluate(board):
     score = 0
@@ -102,53 +109,64 @@ def evaluate(board):
     score += mateOpportunity(board) + opening(board)
     return score
 
-def getBestMove(board):
-    return engine(board, None, 1)
-    
-def engine(board, candidate, depth):
-
+def getBestMove(board, depth=1, maximizingPlayer=True, alpha=float('-inf'), beta=float('inf')):
     if depth == maxDepth or board.legal_moves.count() == 0:
-        return evaluate(board)
+        score = evaluate(board)
+        return score
     
-    else:
-        moveList = list(board.legal_moves)
-        moveCandidate = None
-        
-        with chess.polyglot.open_reader("openings.bin") as reader:
-            polyglot = []
-            for entry in reader.find_all(board):
-                polyglot.append(entry.move)
-            if polyglot:
-                return random.choice(polyglot)
-        
-        if depth % 2 != 0 :
-            moveCandidate = float("-inf")
-        else:
-            moveCandidate = float("inf")
-        
-        for i in moveList:
-            board.push(i)
-
-            value = engine(board, moveCandidate, depth + 1) 
-
-            if value > moveCandidate and depth % 2 != 0:
-                if depth == 1:
-                    move = i
-                moveCandidate = value
-            elif value < moveCandidate and depth % 2 == 0:
-                moveCandidate = value
+    with chess.polyglot.open_reader("polyglot/polyglot-normal.bin") as reader:
+        polyglot = []
+        for entry in reader.find_all(board):
+            polyglot.append(entry.move)
+    
+    if maximizingPlayer:
+        maxEval = float('-inf')
+        for move in board.legal_moves:
+            # print(board)
+            board.push(move)
+            
+            eval = getBestMove(board, (depth + 1), False, alpha, beta)
+            
+            board.pop()
+            
+            if eval > maxEval:
+                maxEval = eval
+                bestMove = move
                 
-            if candidate != None and value < candidate and depth % 2 == 0:
-                board.pop()
+            alpha = max(alpha, eval)
+            if beta <= alpha:
+                break
+        
+        if depth == 1:
+            if polyglot: 
+                return random_choice(polyglot)
+            else: 
+                return bestMove
+        else:
+            return maxEval
+    
+    else: 
+        minEval = float('inf')
+        for move in board.legal_moves:
+            # print(board)
+            board.push(move)
+            
+            eval= getBestMove(board, (depth + 1), True, alpha, beta)
+            
+            board.pop()
+            
+            if eval < minEval:
+                minEval = eval
+                bestMove = move
+            beta = min(beta, eval)
+            
+            if beta <= alpha:
                 break
             
-            elif candidate != None and value > candidate and depth % 2 != 0:
-                board.pop()
-                break
-
-            board.pop()
-
-        if depth > 1:
-            return moveCandidate
+        if depth == 1:
+            if polyglot: 
+                return random_choice(polyglot)
+            else: 
+                return bestMove
         else:
-            return move
+            return minEval

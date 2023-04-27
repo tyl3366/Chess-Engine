@@ -1,0 +1,13 @@
+>BrownieBot
+<xboard
+<uci
+>id name BrownieBot
+>uciok
+<isready
+>readyok
+<ucinewgame
+<isready
+>readyok
+<position startpos moves e2e4
+<go wtime 606000 btime 600000 winc 6000 binc 6000
+['Traceback (most recent call last):\n', '  File "C:\\Users\\dbsho\\OneDrive\\Desktop\\Coding\\PythonProjects\\Chess Engine\\uci.py", line 118, in <module>\n    main()\n', '  File "C:\\Users\\dbsho\\OneDrive\\Desktop\\Coding\\PythonProjects\\Chess Engine\\uci.py", line 114, in main\n    best = engine.getBestMove(board)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "C:\\Users\\dbsho\\OneDrive\\Desktop\\Coding\\PythonProjects\\Chess Engine\\engine.py", line 117, in getBestMove\n    with chess.polyglot.open_reader("polyglot/polyglot-largest.bin") as reader:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "C:\\Users\\dbsho\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\chess\\polyglot.py", line 542, in open_reader\n    return MemoryMappedReader(path)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "C:\\Users\\dbsho\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\chess\\polyglot.py", line 348, in __init__\n    raise IOError(f"invalid file size: ensure {filename!r} is a valid polyglot opening book")\n', "OSError: invalid file size: ensure 'polyglot/polyglot-largest.bin' is a valid polyglot opening book\n"]

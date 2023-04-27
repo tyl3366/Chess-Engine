@@ -2,7 +2,7 @@ import chess
 import chess.pgn
 import sys
 import traceback
-from engine import Engine
+import engine
 
 CACHE_SIZE = 200000
 MINTIME = 0.1
@@ -11,10 +11,8 @@ NODES = 800
 C = 3.0
 
 
-logfile = open("chessbot.log", "w")
+logfile = open("EngineLog.log", "w")
 LOG = True
-
-engine = Engine(color=chess.BLACK)
 
 def log(msg):
     if LOG:
@@ -113,7 +111,7 @@ def main():
 
 
             if my_time != None:
-                best = engine.getBestMove(board=board)
+                best = engine.getBestMove(board)
             send("bestmove {}".format(best))
 
 try:
