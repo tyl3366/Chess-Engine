@@ -73,7 +73,7 @@ def main_one_agent(board, agent, agent_color):
         
      
         if board.turn==agent_color:
-            move = agent.search(board, 4)
+            move, depth, evaluation = agent.getBestMove(board)
             board.push(move)
             print(move)
             

@@ -10,4 +10,63 @@
 >readyok
 <position startpos moves e2e4
 <go wtime 606000 btime 600000 winc 6000 binc 6000
-['Traceback (most recent call last):\n', '  File "C:\\Users\\dbsho\\OneDrive\\Desktop\\Coding\\PythonProjects\\Chess Engine\\uci.py", line 118, in <module>\n    main()\n', '  File "C:\\Users\\dbsho\\OneDrive\\Desktop\\Coding\\PythonProjects\\Chess Engine\\uci.py", line 114, in main\n    best = engine.getBestMove(board)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "C:\\Users\\dbsho\\OneDrive\\Desktop\\Coding\\PythonProjects\\Chess Engine\\engine.py", line 117, in getBestMove\n    with chess.polyglot.open_reader("polyglot/polyglot-largest.bin") as reader:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "C:\\Users\\dbsho\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\chess\\polyglot.py", line 542, in open_reader\n    return MemoryMappedReader(path)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "C:\\Users\\dbsho\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\chess\\polyglot.py", line 348, in __init__\n    raise IOError(f"invalid file size: ensure {filename!r} is a valid polyglot opening book")\n', "OSError: invalid file size: ensure 'polyglot/polyglot-largest.bin' is a valid polyglot opening book\n"]
+>info depth 5 score -0.7
+>bestmove b8c6
+<position startpos moves e2e4 b8c6 d2d4
+<go wtime 604031 btime 605209 winc 6000 binc 6000
+>info depth 5 score -0.65
+>bestmove e7e6
+<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3
+<go wtime 604156 btime 609151 winc 6000 binc 6000
+>info depth 5 score -0.65
+>bestmove f8b4
+<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2
+<go wtime 607015 btime 611813 winc 6000 binc 6000
+>info depth 5 score 0.05
+>bestmove c6d4
+<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 c3e2
+<go wtime 607015 btime 615536 winc 6000 binc 6000
+>info depth 5 score 0.2
+>bestmove b4c5
+<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 c3e2 b4c5 e2d4
+<go wtime 611546 btime 618510 winc 6000 binc 6000
+>info depth 5 score -0.05
+>bestmove c5d4
+<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 c3e2 b4c5 e2d4 c5d4 d2g5
+<go wtime 611640 btime 622031 winc 6000 binc 6000
+>info depth 5 score 0.9
+>bestmove d4f2
+<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 c3e2 b4c5 e2d4 c5d4 d2g5 d4f2 e1f2
+<go wtime 615234 btime 626552 winc 6000 binc 6000
+>info depth 5 score 1.2
+>bestmove d8g5
+<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 c3e2 b4c5 e2d4 c5d4 d2g5 d4f2 e1f2 d8g5 f1b5
+<go wtime 617297 btime 631291 winc 6000 binc 6000
+>info depth 5 score 4.2
+>bestmove g5b5
+<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 c3e2 b4c5 e2d4 c5d4 d2g5 d4f2 e1f2 d8g5 f1b5 g5b5 b2b3
+<go wtime 618281 btime 635750 winc 6000 binc 6000
+>info depth 5 score 5.4
+>bestmove g8f6
+<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 c3e2 b4c5 e2d4 c5d4 d2g5 d4f2 e1f2 d8g5 f1b5 g5b5 b2b3 g8f6 d1e2
+<go wtime 621015 btime 639412 winc 6000 binc 6000
+>info depth 5 score 6.15
+>bestmove b5e2
+<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 c3e2 b4c5 e2d4 c5d4 d2g5 d4f2 e1f2 d8g5 f1b5 g5b5 b2b3 g8f6 d1e2 b5e2 g1e2
+<go wtime 626703 btime 641792 winc 6000 binc 6000
+>info depth 5 score 6.35
+>bestmove f6e4
+<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 c3e2 b4c5 e2d4 c5d4 d2g5 d4f2 e1f2 d8g5 f1b5 g5b5 b2b3 g8f6 d1e2 b5e2 g1e2 f6e4 f2e3
+<go wtime 625515 btime 646266 winc 6000 binc 6000
+>info depth 5 score 6.2
+>bestmove e4f6
+<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 c3e2 b4c5 e2d4 c5d4 d2g5 d4f2 e1f2 d8g5 f1b5 g5b5 b2b3 g8f6 d1e2 b5e2 g1e2 f6e4 f2e3 e4f6 h1f1
+<go wtime 629625 btime 650349 winc 6000 binc 6000
+>info depth 5 score 6.35
+>bestmove e6e5
+<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 c3e2 b4c5 e2d4 c5d4 d2g5 d4f2 e1f2 d8g5 f1b5 g5b5 b2b3 g8f6 d1e2 b5e2 g1e2 f6e4 f2e3 e4f6 h1f1 e6e5 c2c4
+<go wtime 634266 btime 653604 winc 6000 binc 6000
+>info depth 5 score 6.0
+>bestmove f6g4
+<quit
+['Traceback (most recent call last):\n', '  File "C:\\Users\\dbsho\\OneDrive\\Desktop\\Coding\\PythonProjects\\Chess Engine\\uci.py", line 121, in <module>\n    main()\n', '  File "C:\\Users\\dbsho\\OneDrive\\Desktop\\Coding\\PythonProjects\\Chess Engine\\uci.py", line 72, in main\n    exit(0)\n', '  File "<frozen _sitebuiltins>", line 26, in __call__\n', 'SystemExit: 0\n']

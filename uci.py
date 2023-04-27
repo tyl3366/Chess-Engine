@@ -87,6 +87,7 @@ def main():
                 my_time = int(tokens[2])/1000.0
                 if my_time < MINTIME:
                     my_time = MINTIME
+                    
             if (len(tokens) == 9) and (tokens[1] == 'wtime'):
                 wtime = int(tokens[2])
                 btime = int(tokens[4])
@@ -110,9 +111,11 @@ def main():
                 my_time = 10000
 
 
+
             if my_time != None:
-                best = engine.getBestMove(board)
-            send("bestmove {}".format(best))
+                bestMove, depth, score = engine.getBestMove(board)
+            send("info depth {} score {}".format(depth, score))
+            send("bestmove {}".format(bestMove))
 
 try:
     main()
