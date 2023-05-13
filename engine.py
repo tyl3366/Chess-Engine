@@ -1,7 +1,18 @@
 import chess
 import chess.polyglot
 from random import choice as random_choice
+from random import randrange
+import numpy as np
 
+
+zobrist = []
+for _ in range(64):
+    row = []
+    for _ in range(12):
+        row.append(randrange(2**64))
+    zobrist.append(row)
+
+table = {}
 
 maxDepth = 5
 P = 100
@@ -123,6 +134,26 @@ def eval_side(board: chess.Board, color: chess.Color) -> int:
 def evaluate(board: chess.Board) -> int:
     return eval_side(board, board.turn) - eval_side(board, not board.turn)
 
+def zobrist_hash(board):
+    pieces = board.piece_map()
+
+    hash = 0
+    for square in chess.SQUARES:
+        if square in pieces:
+            piece = pieces[square]
+            piece_type = piece.piece_type + piece.color * 6 - 1
+            hash ^= zobrist[square][piece_type]
+
+    return hash
+
+def record(self, hash, value, decision, depth):
+    if hash not in table:
+        table[hash] = {}
+        
+    table[hash]['value'] = value
+    table[hash]['decision'] = decision
+    table[hash]['depth'] = depth
+
 def getBestMove(board, depth=1, maximizingPlayer=True, alpha=float('-inf'), beta=float('inf')):
     if depth == maxDepth or board.legal_moves.count() == 0:
         score = evaluate(board)
@@ -152,10 +183,10 @@ def getBestMove(board, depth=1, maximizingPlayer=True, alpha=float('-inf'), beta
                 break
         
         if depth == 1:
-            # if polyglot: 
-            #     return random_choice(polyglot)
-            # else: 
-            return bestMove, maxDepth, maxEval / 100
+            if polyglot: 
+                return random_choice(polyglot), maxDepth, maxEval
+            else: 
+                return bestMove, maxDepth, maxEval
         else:
             return maxEval
     
@@ -178,9 +209,9 @@ def getBestMove(board, depth=1, maximizingPlayer=True, alpha=float('-inf'), beta
                 break
             
         if depth == 1:
-            # if polyglot: 
-            #     return random_choice(polyglot)
-            # else: 
-            return bestMove, maxDepth, minEval / 100
+            if polyglot: 
+                return random_choice(polyglot), maxDepth, minEval
+            else: 
+                return bestMove, maxDepth, minEval
         else:
             return minEval

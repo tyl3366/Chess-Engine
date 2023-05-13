@@ -114,7 +114,7 @@ def main():
 
             if my_time != None:
                 bestMove, depth, score = engine.getBestMove(board)
-            send("info depth {} score {}".format(depth, score))
+            send("info depth {} score cp {}".format(depth, score))
             send("bestmove {}".format(bestMove))
 
 try:

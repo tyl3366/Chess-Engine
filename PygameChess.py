@@ -3,24 +3,19 @@ import chess
 import math
 import engine
 
-
-#initialise display
 X = 800
 Y = 800
 screen = pygame.display.set_mode((X, Y))
 pygame.init()
 
-#basic colours
 WHITE = (255, 255, 255)
 GREY = (128, 128, 128)
 YELLOW = (204, 204, 0)
 BLUE = (50, 255, 255)
 BLACK = (0, 0, 0)
 
-#initialise chess board
 b = chess.Board()
 
-#load piece images
 pieces = {'p': pygame.image.load('images/bp.png'),
           'n': pygame.image.load('images/bN.png'),
           'b': pygame.image.load('images/bB.png'),
