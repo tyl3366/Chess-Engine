@@ -13,3 +13,11 @@ I will probably end up remaking this in Java in the future.
 
 # Future Features
 * Zobrist Hashing/Transposition Tables
+* Bit Boards
+* Faster hashing and more efficient searches
+* NegaMax Search algorithm
+* Quiescence Search
+* Aspiration windows
+* More advanced evaluation function (potentially a NN evaluation, but will probably be a separate project)
+
+As you can see, there is a lot of work to be done. I am always busy with school and so will probably have slow progress. In the near future I would like to have the bot on Lichess, available to be played.
