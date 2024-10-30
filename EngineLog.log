@@ -1,7 +1,8 @@
->BrownieBot
+>PhoenixEngine by Tyler Shoaff
 <xboard
 <uci
->id name BrownieBot
+>id name PhoenixEngine
+>id name author Tyler Shoaff
 >uciok
 <isready
 >readyok
@@ -10,92 +11,47 @@
 >readyok
 <position startpos moves e2e4
 <go wtime 606000 btime 600000 winc 6000 binc 6000
->info depth 5 score cp -75
->bestmove b8c6
-<position startpos moves e2e4 b8c6 g1f3
-<go wtime 608969 btime 605036 winc 6000 binc 6000
->info depth 5 score cp -90
->bestmove g8f6
-<position startpos moves e2e4 b8c6 g1f3 g8f6 b1c3
-<go wtime 612219 btime 610057 winc 6000 binc 6000
->info depth 5 score cp -140
->bestmove h8g8
-<position startpos moves e2e4 b8c6 g1f3 g8f6 b1c3 h8g8 f1b5
-<go wtime 615500 btime 614405 winc 6000 binc 6000
->info depth 5 score cp -150
->bestmove c6b4
-<position startpos moves e2e4 b8c6 g1f3 g8f6 b1c3 h8g8 f1b5 c6b4 b2b3
-<go wtime 608750 btime 618706 winc 6000 binc 6000
->info depth 5 score cp -120
->bestmove c7c6
-<position startpos moves e2e4 b8c6 g1f3 g8f6 b1c3 h8g8 f1b5 c6b4 b2b3 c7c6 b5d3
-<go wtime 612547 btime 619914 winc 6000 binc 6000
->info depth 5 score cp 45
->bestmove b4d3
-<position startpos moves e2e4 b8c6 g1f3 g8f6 b1c3 h8g8 f1b5 c6b4 b2b3 c7c6 b5d3 b4d3 c2d3
-<go wtime 616516 btime 624200 winc 6000 binc 6000
->info depth 5 score cp 20
->bestmove d8a5
-<position startpos moves e2e4 b8c6 g1f3 g8f6 b1c3 h8g8 f1b5 c6b4 b2b3 c7c6 b5d3 b4d3 c2d3 d8a5 b3b4
-<go wtime 620328 btime 629533 winc 6000 binc 6000
->info depth 5 score cp 15
->bestmove a5b4
-<position startpos moves e2e4 b8c6 g1f3 g8f6 b1c3 h8g8 f1b5 c6b4 b2b3 c7c6 b5d3 b4d3 c2d3 d8a5 b3b4 a5b4 c3d5
-<go wtime 625000 btime 630585 winc 6000 binc 6000
->info depth 5 score cp 300
->bestmove c6d5
-<position startpos moves e2e4 b8c6 g1f3 g8f6 b1c3 h8g8 f1b5 c6b4 b2b3 c7c6 b5d3 b4d3 c2d3 d8a5 b3b4 a5b4 c3d5 c6d5 e4e5
-<go wtime 629375 btime 635028 winc 6000 binc 6000
->info depth 5 score cp 305
->bestmove f6g4
-<ucinewgame
-<isready
->readyok
-<position startpos moves e2e4
-<go wtime 606000 btime 600000 winc 6000 binc 6000
->info depth 5 score cp -75
->bestmove b8c6
-<position startpos moves e2e4 b8c6 d2d4
-<go wtime 609563 btime 605005 winc 6000 binc 6000
->info depth 5 score cp 25
+>info depth 5 score cp -70
 >bestmove e7e6
-<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3
-<go wtime 614235 btime 609245 winc 6000 binc 6000
->info depth 5 score cp 20
+<position startpos moves d2d3
+<go wtime 606000 btime 600000 winc 6000 binc 6000
+>info depth 5 score cp -40
+>bestmove b8c6
+<position startpos moves d2d3 b8c6 e2e3
+<go wtime 595578 btime 605380 winc 6000 binc 6000
+>info depth 5 score cp -35
+>bestmove e7e6
+<position startpos moves d2d3 b8c6 e2e3 e7e6 e3e4
+<go wtime 599985 btime 610447 winc 6000 binc 6000
+>info depth 5 score cp -20
+>bestmove g8f6
+<position startpos moves d2d3 b8c6 e2e3 e7e6 e3e4 g8f6 g1f3
+<go wtime 600813 btime 615295 winc 6000 binc 6000
+>info depth 5 score cp -20
+>bestmove d7d5
+<position startpos moves d2d3 b8c6 e2e3 e7e6 e3e4 g8f6 g1f3 d7d5 e4d5
+<go wtime 602094 btime 618675 winc 6000 binc 6000
+>info depth 5 score cp 15
+>bestmove e6d5
+<position startpos moves d2d3 b8c6 e2e3 e7e6 e3e4 g8f6 g1f3 d7d5 e4d5 e6d5 b2b3
+<go wtime 597406 btime 620164 winc 6000 binc 6000
+>info depth 5 score cp 70
 >bestmove f8b4
-<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2
-<go wtime 614797 btime 612187 winc 6000 binc 6000
->info depth 5 score cp 105
->bestmove c6d4
-<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 a2a3
-<go wtime 613625 btime 615926 winc 6000 binc 6000
->info depth 5 score cp 145
->bestmove b4a5
-<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 a2a3 b4a5 c3e2
-<go wtime 618953 btime 607024 winc 6000 binc 6000
->info depth 5 score cp 145
->bestmove a5b6
-<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 a2a3 b4a5 c3e2 a5b6 e2d4
-<go wtime 623874 btime 611138 winc 6000 binc 6000
->info depth 5 score cp 60
->bestmove b6d4
-<position startpos moves e2e4 b8c6 d2d4 e7e6 b1c3 f8b4 c1d2 c6d4 a2a3 b4a5 c3e2 a5b6 e2d4 b6d4 g1f3
-<go wtime 626405 btime 614830 winc 6000 binc 6000
->info depth 5 score cp 245
->bestmove d4b2
-<ucinewgame
-<isready
->readyok
-<position startpos moves e2e4
-<go wtime 606000 btime 600000 winc 6000 binc 6000
->info depth 5 score cp -75
->bestmove b8c6
-<ucinewgame
-<isready
->readyok
-<position startpos moves e2e4
-<go wtime 606000 btime 600000 winc 6000 binc 6000
->info depth 5 score cp -75
->bestmove b8c6
+<position startpos moves d2d3 b8c6 e2e3 e7e6 e3e4 g8f6 g1f3 d7d5 e4d5 e6d5 b2b3 f8b4 c2c3
+<go wtime 579734 btime 623669 winc 6000 binc 6000
+>info depth 5 score cp 90
+>bestmove b4c5
+<position startpos moves d2d3 b8c6 e2e3 e7e6 e3e4 g8f6 g1f3 d7d5 e4d5 e6d5 b2b3 f8b4 c2c3 b4c5 f1e2
+<go wtime 562062 btime 624642 winc 6000 binc 6000
+>info depth 5 score cp 90
+>bestmove c8g4
+<position startpos moves d2d3 b8c6 e2e3 e7e6 e3e4 g8f6 g1f3 d7d5 e4d5 e6d5 b2b3 f8b4 c2c3 b4c5 h1g1
+<go wtime 569093 btime 624642 winc 6000 binc 6000
+>info depth 5 score cp 115
+>bestmove e8g8
+<position startpos moves d2d3 b8c6 e2e3 e7e6 e3e4 g8f6 g1f3 d7d5 e4d5 e6d5 b2b3 f8b4 c2c3 b4c5 h1g1 e8g8 g1h1
+<go wtime 572421 btime 628475 winc 6000 binc 6000
+>info depth 5 score cp 130
+>bestmove f8e8
 <quit
-['Traceback (most recent call last):\n', '  File "C:\\Users\\dbsho\\OneDrive\\Desktop\\Coding\\PythonProjects\\Chess Engine\\uci.py", line 121, in <module>\n    main()\n', '  File "C:\\Users\\dbsho\\OneDrive\\Desktop\\Coding\\PythonProjects\\Chess Engine\\uci.py", line 72, in main\n    exit(0)\n', '  File "<frozen _sitebuiltins>", line 26, in __call__\n', 'SystemExit: 0\n']
+['Traceback (most recent call last):\n', '  File "C:\\Users\\dbsho\\OneDrive\\Desktop\\Code\\PhoenixEngine\\uci.py", line 118, in <module>\n    main()\n', '  File "C:\\Users\\dbsho\\OneDrive\\Desktop\\Code\\PhoenixEngine\\uci.py", line 67, in main\n    exit(0)\n', '  File "<frozen _sitebuiltins>", line 26, in __call__\n', 'SystemExit: 0\n']

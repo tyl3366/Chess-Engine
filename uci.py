@@ -4,11 +4,8 @@ import sys
 import traceback
 import engine
 
-CACHE_SIZE = 200000
 MINTIME = 0.1
 TIMEDIV = 25.0
-NODES = 800
-C = 3.0
 
 
 logfile = open("EngineLog.log", "w")
@@ -45,17 +42,13 @@ def process_position(tokens):
         for i in range(offset+1, len(tokens)):
             board.push_uci(tokens[i])
 
-    # deal with cutechess bug where a drawn positions is passed in
-    if board.can_claim_draw():
-        board.clear_stack()
     return board
 
 
 def main():
 
-    send("BrownieBot")
+    send("PhoenixEngine by Tyler Shoaff")
     board = chess.Board()
-    nn = None
 
     while True:
         line = sys.stdin.readline()
@@ -66,12 +59,16 @@ def main():
             continue
 
         if tokens[0] == "uci":
-            send('id name BrownieBot')
+            send('id name PhoenixEngine')
+            send('id name author Tyler Shoaff')
             send('uciok')
+            
         elif tokens[0] == "quit":
             exit(0)
+            
         elif tokens[0] == "isready":
             send("readyok")
+            
         elif tokens[0] == "ucinewgame":
             board = chess.Board()
 
@@ -79,10 +76,10 @@ def main():
             board = process_position(tokens)
 
         elif tokens[0] == 'go':
-            my_nodes = NODES
             my_time = None
             if (len(tokens) == 3) and (tokens[1] == 'nodes'):
                 my_nodes = int(tokens[2])
+                
             if (len(tokens) == 3) and (tokens[1] == 'movetime'):
                 my_time = int(tokens[2])/1000.0
                 if my_time < MINTIME:
